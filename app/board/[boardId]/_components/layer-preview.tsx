@@ -1,13 +1,16 @@
 "use client";
 
-import { useStorage } from "@/liveblocks.config";
-import { LayerType } from "@/types/canvas";
 import { memo } from "react";
+
+import { colorToCss } from "@/lib/utils";
+import { LayerType } from "@/types/canvas";
+import { useStorage } from "@/liveblocks.config";
+
 import { Rectangle } from "./rectangle";
 
 interface LayerPreviewProps {
   id: string;
-  onLayerPointerDown: (e: React.PointerEvent, layerID: string) => void;
+  onLayerPointerDown: (e: React.PointerEvent, layerId: string) => void;
   selectionColor?: string;
 }
 
