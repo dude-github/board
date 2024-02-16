@@ -66,6 +66,10 @@ export const SelectionTools = memo(
 
     const setFill = useMutation(
       ({ storage }, fill: Color) => {
+        // console.log({
+        //   setFill,
+        // });
+
         const liveLayers = storage.get("layers");
         setLastUsedColor(fill);
 
