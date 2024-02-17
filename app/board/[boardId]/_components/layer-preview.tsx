@@ -6,7 +6,11 @@ import { colorToCss } from "@/lib/utils";
 import { LayerType } from "@/types/canvas";
 import { useStorage } from "@/liveblocks.config";
 
+import { Text } from "./text";
+import { Ellipse } from "./ellipse";
 import { Rectangle } from "./rectangle";
+import { Note } from "./note";
+// import { Path } from "./path";
 
 interface LayerPreviewProps {
   id: string;
@@ -23,6 +27,45 @@ export const LayerPreview = memo(
     }
 
     switch (layer.type) {
+      // case LayerType.Path:
+      //   return (
+      //     <Path
+      //       key={id}
+      //       points={layer.points}
+      //       onPointerDown={(e) => onLayerPointerDown(e, id)}
+      //       x={layer.x}
+      //       y={layer.y}
+      //       fill={layer.fill ? colorToCss(layer.fill) : "#000"}
+      //       stroke={selectionColor}
+      //     />
+      //   );
+      case LayerType.Note:
+        return (
+          <Note
+            id={id}
+            layer={layer}
+            onPointerDown={onLayerPointerDown}
+            selectionColor={selectionColor}
+          />
+        );
+      case LayerType.Text:
+        return (
+          <Text
+            id={id}
+            layer={layer}
+            onPointerDown={onLayerPointerDown}
+            selectionColor={selectionColor}
+          />
+        );
+      case LayerType.Ellipse:
+        return (
+          <Ellipse
+            id={id}
+            layer={layer}
+            onPointerDown={onLayerPointerDown}
+            selectionColor={selectionColor}
+          />
+        );
       case LayerType.Rectangle:
         return (
           <Rectangle
@@ -33,7 +76,7 @@ export const LayerPreview = memo(
           />
         );
       default:
-        // console.warn("Unknown layer type");
+        console.warn("Unknown layer type");
         return null;
     }
   }
