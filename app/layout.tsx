@@ -6,7 +6,7 @@ import { Suspense } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { ConvexClientProvider } from "@/providers/convex-client-provider";
 import { ModalProvider } from "@/providers/modal-provider";
-import Loading from "@/components/auth/Loading";
+import { Loading } from "@/components/auth/Loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
