@@ -78,13 +78,13 @@ export const Info = ({ boardId }: InfoProps) => {
 
 export const InfoSkeleton = () => {
   return (
-    // <div className="flex items-center space-x-4">
-    //   <Skeleton className="h-12 w-12 rounded-full" />
-    //   <div className="space-y-2">
-    //     <Skeleton className="h-4 w-[250px]" />
-    //     <Skeleton className="h-4 w-[200px]" />
-    //   </div>
-    // </div>
-    <Skeleton className="absolute top-2 left-2 rounded-md px-1.5 h-12 flex items-center shadow-md w-[300px]" />
+    <div className="absolute top-2 left-2 rounded-md px-1.5 h-12 flex items-center shadow-md w-[300px]">
+      <Skeleton className="h-12 w-12 rounded-full" />
+      <div className="space-y-2">
+        <Skeleton className="h-4 w-[250px]" />
+        <Skeleton className="h-4 w-[200px]" />
+      </div>
+    </div>
+    // <Skeleton className="absolute top-2 left-2 rounded-md px-1.5 h-12 flex items-center shadow-md w-[300px]" />
   );
 };
